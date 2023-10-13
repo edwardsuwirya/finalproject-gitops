@@ -1,0 +1,19 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: frontend-route
+spec:
+  hosts:
+    - "www.edwardsuwirya.com"
+  gateways:
+    - istio-gateway
+  http:
+    - name: "react-route"
+      match:
+        - uri:
+            prefix: "/"
+      route:
+        - destination:
+            host: react-release-service.final-project.svc.cluster.local
+            port:
+              number: 80

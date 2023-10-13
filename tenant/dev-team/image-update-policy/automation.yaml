@@ -1,0 +1,23 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta1
+kind: ImageUpdateAutomation
+metadata:
+  name: final-project
+spec:
+  interval: 1m
+  sourceRef:
+    kind: GitRepository
+    name: dev-team
+  git:
+    checkout:
+      ref:
+        branch: dev-team
+    commit:
+      author:
+        email: dev-team@edwardsuwirya.com
+        name: fluxcdbot
+      messageTemplate: 'Updated image: {{range .Updated.Images}}{{println .}}{{end}}'
+    push:
+      branch: dev-team
+  update:
+    path: ./
+    strategy: Setters

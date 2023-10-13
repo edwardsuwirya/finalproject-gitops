@@ -1,0 +1,19 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: backend-route
+spec:
+  hosts:
+    - "api.edwardsuwirya.com"
+  gateways:
+    - istio-gateway
+  http:
+    - name: "golang-route"
+      match:
+        - uri:
+            prefix: "/"
+      route:
+        - destination:
+            host: golang-release-service.final-project.svc.cluster.local
+            port:
+              number: 8888

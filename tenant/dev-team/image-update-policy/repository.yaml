@@ -1,0 +1,20 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImageRepository
+metadata:
+  name: simple-go-repo
+spec:
+  image: registry.digitalocean.com/enigmacamp/simple-go
+  interval: 1m
+  secretRef:
+    name: regcred
+
+---
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImageRepository
+metadata:
+  name: simple-react-repo
+spec:
+  image: registry.digitalocean.com/enigmacamp/simple-react
+  interval: 1m
+  secretRef:
+    name: regcred

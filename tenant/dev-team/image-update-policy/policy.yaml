@@ -1,0 +1,23 @@
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImagePolicy
+metadata:
+  name: simple-go-policy
+spec:
+  imageRepositoryRef:
+    name: simple-go-repo
+  policy:
+    numerical:
+      order: asc
+
+---
+
+apiVersion: image.toolkit.fluxcd.io/v1beta2
+kind: ImagePolicy
+metadata:
+  name: simple-react-policy
+spec:
+  imageRepositoryRef:
+    name: simple-react-repo
+  policy:
+    numerical:
+      order: asc

@@ -1,0 +1,13 @@
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: dev-team
+spec:
+  interval: 1m0s
+  path: ./
+  prune: true
+  serviceAccountName: dev-team
+  sourceRef:
+    kind: GitRepository
+    name: dev-team

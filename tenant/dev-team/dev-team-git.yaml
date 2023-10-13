@@ -1,0 +1,12 @@
+---
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: GitRepository
+metadata:
+  name: dev-team
+spec:
+  interval: 1m0s
+  ref:
+    branch: dev-team
+  secretRef:
+    name: apps-auth
+  url: ssh://git@github.com/edwardsuwirya/finalproject-gitops
