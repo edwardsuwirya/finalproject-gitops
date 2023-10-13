@@ -8,5 +8,5 @@ spec:
   ref:
     branch: dev-team
   secretRef:
-    name: apps-auth
+    name: flux-system
   url: ssh://git@github.com/edwardsuwirya/finalproject-gitops
