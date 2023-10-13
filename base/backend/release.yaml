@@ -14,6 +14,6 @@ spec:
       interval: 1m
   values:
     image:
-      tag: "2" # {"$imagepolicy": "final-project:simple-go-policy:tag"}
+      tag: "3" # {"$imagepolicy": "final-project:simple-go-policy:tag"}
     config:
       response: "456"
